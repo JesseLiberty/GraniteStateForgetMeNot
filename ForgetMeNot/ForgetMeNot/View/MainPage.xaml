@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Forget Me Not"
+             x:Class="ForgetMeNot.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="flower.png"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

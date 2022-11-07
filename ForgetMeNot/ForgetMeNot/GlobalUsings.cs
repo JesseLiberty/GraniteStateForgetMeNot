@@ -1,0 +1,11 @@
+﻿global using CommunityToolkit.Maui;
+global using CommunityToolkit.Mvvm.ComponentModel;
+global using CommunityToolkit.Mvvm.Input;
+global using ForgetMeNot.Helpers;
+global using ForgetMeNot.View;
+global using ForgetMeNot.ViewModel;
+global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Threading.Tasks;
+global using System.Diagnostics;

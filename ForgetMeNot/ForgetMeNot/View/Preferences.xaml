@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ForgetMeNot.View.Preferences"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:model="using:ForgetMeNot.Model"
+    Title="Your Preferences">
+    <ContentPage.Resources>
+        <Style x:Key="PreferenceStyle" TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="AntiqueWhite" />
+            <Setter Property="HorizontalOptions" Value="Start" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="WidthRequest" Value="400" />
+        </Style>
+
+        <Style TargetType="Entry">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="White" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Focused">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Wheat" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label
+                Margin="5"
+                Padding="5"
+                HorizontalOptions="Center"
+                LineBreakMode="WordWrap"
+                Text="Please fill in as many preferences as you care to. &#10; &#10;The fields are 'free form,' fill in anything you like. Remember, the more information you provide to your buddies the better they will be able to match to what you like. Each of the categories can be edited for your needs.&#10; &#10; Save as frequently as you like, and to edit, just change the value you entered and press save." />
+            <Button
+                Margin="30,20,0,0"
+                Clicked="SavePreferences"
+                Command="{Binding SavePreferencesCommand}"
+                Text="Save" />
+            <CollectionView
+                Margin="20,20,10,10"
+                ItemsSource="{Binding Preferences}"
+                SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*,2*">
+                            <Entry
+                                Grid.Column="0"
+                                FontSize="10"
+                                HorizontalOptions="Start"
+                                HorizontalTextAlignment="Start"
+                                Text="{Binding PreferencePrompt, Mode=TwoWay}"
+                                TextColor="{OnPlatform Black,
+                                                       iOS=White}" />
+                            <Entry
+                                Grid.Column="1"
+                                FontSize="10"
+                                HeightRequest="32"
+                                HorizontalOptions="Start"
+                                HorizontalTextAlignment="Start"
+                                Text="{Binding PreferenceValue, Mode=TwoWay}"
+                                TextColor="{OnPlatform Black,
+                                                       iOS=White}"
+                                WidthRequest="350" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button
+                Margin="30,20,0,0"
+                Clicked="SavePreferences"
+                Command="{Binding SavePreferencesCommand}"
+                Text="Save" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

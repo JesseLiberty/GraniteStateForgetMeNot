@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Shell
+    x:Class="ForgetMeNot.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ForgetMeNot"
+    xmlns:view="clr-namespace:ForgetMeNot.View"
+    Shell.FlyoutBehavior="Disabled">
+
+
+    <TabBar >
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Icon="icon_home" />
+
+        <ShellContent
+            Title="About"
+            ContentTemplate="{DataTemplate local:About}"
+            Icon="icon_about" />
+
+        <ShellContent
+            Title="Preferences"
+            ContentTemplate="{DataTemplate view:Preferences}"
+            Icon="icon_prefs" />
+
+        <ShellContent
+            Title="Buddies"
+            ContentTemplate="{DataTemplate view:BuddyList}"
+            Icon="icon_buddies" />
+
+
+    </TabBar>
+
+
+
+</Shell>

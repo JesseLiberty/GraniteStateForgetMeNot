@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ForgetMeNot.View.BuddyDetail"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Buddy Detail">
+
+    <ContentPage.Resources>
+        <Style TargetType="Entry">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="White" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Focused">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Wheat" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout>
+
+        <Grid
+            Margin="20"
+            ColumnDefinitions="*,2*"
+            RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto, Auto, Auto">
+            <Label
+                Grid.Column="0"
+                Margin="10"
+                FontAttributes="Bold"
+                HorizontalOptions="End"
+                Text="Name:" />
+            <Label
+                Grid.Column="1"
+                Margin="10"
+                Text="{Binding SelectedBuddy.Name}" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="10"
+                FontAttributes="Bold"
+                HorizontalOptions="End"
+                Text="Email:" />
+            <Entry
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="10,0,0,0"
+                Text="{Binding EmailAddress, Mode=TwoWay}"
+                VerticalTextAlignment="Center" />
+            <Label
+                Grid.Row="3"
+                Grid.Column="0"
+                Margin="10"
+                FontAttributes="Bold"
+                HorizontalOptions="End"
+                Text="Status: " />
+            <Label
+                Grid.Row="3"
+                Grid.Column="1"
+                Margin="10"
+                Text="{Binding Status}" />
+
+            <Label
+                Grid.Row="4"
+                Grid.Column="0"
+                Margin="10"
+                FontAttributes="Bold"
+                HorizontalOptions="End"
+                Text="Since: " />
+            <Label
+                Grid.Row="4"
+                Grid.Column="1"
+                Margin="10"
+                Text="{Binding BuddySinceString}" />
+
+            <Label
+                Grid.Row="5"
+                Grid.Column="0"
+                Margin="10"
+                FontAttributes="Bold"
+                HorizontalOptions="End"
+                Text="Address: " />
+            <Entry
+                Grid.Row="5"
+                Grid.Column="1"
+                Margin="10,0"
+                Text="{Binding MailingAddressLine1, Mode=TwoWay}" />
+
+            <Entry
+                Grid.Row="6"
+                Grid.Column="1"
+                Margin="10,-12,0,0"
+                Text="{Binding MailingAddressLine2, Mode=TwoWay}" />
+
+
+            <Label
+                Grid.Row="7"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                FontSize="8"
+                HorizontalOptions="Center"
+                Text="Please update email and mailing address as needed." />
+
+
+            <HorizontalStackLayout
+                Grid.Row="8"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0,50,0,0"
+                HorizontalOptions="Center">
+
+                <Button Command="{Binding ShowBuddyOccasionsCommand}" Text="Occasions" />
+
+                <Button
+                    Margin="20,0,0,0"
+                    Command="{Binding ShowBuddyPreferencesCommand}"
+                    Text="Preferences" />
+            </HorizontalStackLayout>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

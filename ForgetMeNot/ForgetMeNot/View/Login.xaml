@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ForgetMeNot.View.Login"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:iOsSpecific="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    Title="Login"
+    Shell.NavBarIsVisible="False"
+    iOsSpecific:Page.UseSafeArea="True"
+    Shell.PresentationMode="ModalAnimated">
+    <VerticalStackLayout>
+        <Grid
+            ColumnDefinitions="*,*,*"
+            RowDefinitions="Auto,Auto,Auto,Auto"
+            RowSpacing="10">
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalOptions="End"
+                Text="User name"
+                VerticalOptions="Center" />
+            <Entry
+                Grid.Row="0"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Placeholder="User name"
+                Text="{Binding LoginName}"
+                WidthRequest="150" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                HorizontalOptions="End"
+                Text="Password"
+                VerticalOptions="Center" />
+            <Entry
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                IsPassword="True"
+                Placeholder="Password"
+                Text="{Binding Password}"
+                WidthRequest="150" />
+            <Button
+                Grid.Row="2"
+                Grid.Column="0"
+                Margin="0,20,0,0"
+                BackgroundColor="LightGray"
+                Command="{Binding DoLoginCommand}"
+                Text="Submit"
+                TextColor="Black"
+                WidthRequest="125" />
+            <Button
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="0,20,0,0"
+                BackgroundColor="LightGray"
+                Command="{Binding DoCreateAccountCommand}"
+                Text="Create Account"
+                TextColor="Black"
+                WidthRequest="125" />
+            <Button
+                Grid.Row="2"
+                Grid.Column="2"
+                Margin="0,20,0,0"
+                BackgroundColor="LightGray"
+                Command="{Binding ForgotPasswordCommand}"
+                Text="Forgot Password"
+                TextColor="Black"
+                WidthRequest="125" />
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
