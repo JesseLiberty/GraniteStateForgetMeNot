@@ -3,4 +3,6 @@
 
 See associated video at https://jliberty.me/ForgetMeNotVideo
 
+See associated blog posts starting at https://jliberty.me/ForgetMeNotPart1
+
 Please do not distribute.
