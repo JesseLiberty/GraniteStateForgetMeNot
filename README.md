@@ -1,2 +1,6 @@
 # GraniteStateForgetMeNot
-Incomplete client for Forget Me Not - provided as part of presentation. Please do not distribute.
+**Incomplete** client for _Forget Me Not_ - originally provided as part of a presentation. 
+
+See associated video at https://jliberty.me/ForgetMeNotVideo
+
+Please do not distribute.
